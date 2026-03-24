@@ -11,7 +11,7 @@ export const projects: Project[] = [
     title: 'Data Labeling Support System',
     description:
       'A web-based data labeling platform managing end-to-end workflows with multi-role collaboration. Built with React.js, Vite, Ant Design.',
-    logo: '/logos/react_icon.svg',
+    logo: '/logos/datalabeling.png',
     link: 'https://github.com/h1eudayne/FE_DataLabelingSupportSystem',
     slug: 'data-labeling-support-system',
   },
@@ -19,7 +19,7 @@ export const projects: Project[] = [
     title: 'HistoryMind AI',
     description:
       'An AI-powered Vietnamese History Q&A system using semantic search, FAISS, and NLU pipeline with 600+ vectors.',
-    logo: '/logos/js_icon.svg',
+    logo: '/logos/historymind.png',
     link: 'https://github.com/HistoryMindAI',
     slug: 'historymind-ai',
   },
