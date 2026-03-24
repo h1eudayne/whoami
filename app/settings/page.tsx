@@ -25,7 +25,22 @@ const SettingsPage = () => {
   };
 
   if (!isLoaded) {
-    return null;
+    return (
+      <div className={styles.page}>
+        <div className={styles.container}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '50vh',
+            color: 'var(--text-secondary, #888)',
+            fontSize: '0.9rem',
+          }}>
+            Loading themes...
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
