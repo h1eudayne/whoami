@@ -19,7 +19,7 @@ export const projects: Project[] = [
     title: 'HistoryMind AI',
     description:
       'An AI-powered Vietnamese History Q&A system using semantic search, FAISS, and NLU pipeline with 600+ vectors.',
-    logo: '/logos/historymind.png',
+    logo: '/logos/historymind.webp',
     link: 'https://github.com/HistoryMindAI',
     slug: 'historymind-ai',
   },

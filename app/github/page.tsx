@@ -15,8 +15,16 @@ export const metadata: Metadata = {
 export const revalidate = 600;
 
 async function getGithubData() {
+  const headers: HeadersInit = {
+    Accept: 'application/vnd.github.v3+json',
+    ...(process.env.GITHUB_API_KEY && {
+      Authorization: `Bearer ${process.env.GITHUB_API_KEY}`,
+    }),
+  };
+
   const userRes = await fetch(
-    `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`
+    `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`,
+    { headers }
   );
   if (!userRes.ok) {
     throw new Error(`Failed to fetch user: ${userRes.status}`);
@@ -24,7 +32,8 @@ async function getGithubData() {
   const user: User = await userRes.json();
 
   const repoRes = await fetch(
-    `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?sort=pushed&per_page=6`
+    `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?sort=pushed&per_page=6`,
+    { headers }
   );
   if (!repoRes.ok) {
     throw new Error(`Failed to fetch repos: ${repoRes.status}`);
